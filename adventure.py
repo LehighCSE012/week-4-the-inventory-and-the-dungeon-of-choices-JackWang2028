@@ -68,12 +68,12 @@ def acquire_item(inventory, item):
 
 def display_inventory(inventory):
     """display inventory"""
-    print("Your inventory:\n")
+    print("Your inventory:")
     if len(inventory) == 0:
         print("Your inventory is empty.")
     for i in inventory:
         invcount = 1
-        print(str(invcount) + ". " + str(i) + "\n")
+        print(str(invcount) + ". " + str(i))
         invcount += 1
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     """simulate dungeon"""
