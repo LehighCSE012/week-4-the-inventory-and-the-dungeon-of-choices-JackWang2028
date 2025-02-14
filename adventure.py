@@ -68,7 +68,7 @@ def acquire_item(inventory, item):
 
 def display_inventory(inventory):
     """display inventory"""
-    print("Your invnetory:\n")
+    print("Your inventory:\n")
     if len(inventory) == 0:
         print("Your inventory is empty.")
     for i in inventory:
