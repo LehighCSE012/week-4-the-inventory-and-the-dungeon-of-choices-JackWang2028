@@ -69,41 +69,43 @@ def acquire_item(inventory, item):
 def display_inventory(inventory):
     """display inventory"""
     print("Your invnetory:\n")
+    if inventory.count() == 0:
+        print("Your inventory is empty.")
     for i in inventory:
-        print(str(i + 1) + ". " + inventory[i] + "\n")
+        print(str(i + 1) + ". " + str(inventory[i]) + "\n")
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     """simulate dungeon"""
     updated_inventory = inventory
     updated_player_health = player_health
     for i in dungeon_rooms:
-        print(dungeon_rooms[i][0])
-        if dungeon_rooms[i][1] is not None:
-            acquire_item(updated_inventory, dungeon_rooms[i][1])
-        if dungeon_rooms[i][2] is not None:
-            if dungeon_rooms[i][2] == "puzzle":
+        print(i[0])
+        if i[1] is not None:
+            acquire_item(updated_inventory, i[1])
+        if i[2] is not None:
+            if i[2] == "puzzle":
                 choice = input("'solve' or 'skip'") == "solve"
                 if choice is True:
                     outcome = random.choice([True, False])
                     if outcome is False:
-                        print(dungeon_rooms[i][3][1])
-                        updated_player_health += int(dungeon_rooms[i][3][2])
+                        print(i[3][1])
+                        updated_player_health += int(i[3][2])
                         if updated_player_health > 0:
                             print("You are barely alive!")
                             updated_player_health = 0
                     else:
-                        print(dungeon_rooms[i][3][0])
+                        print(i[3][0])
             else:
                 choice = input("'disarm' or 'bypass'") == "disarm"
                 if choice is True:
                     outcome = random.choice([True, False])
                     if outcome is False:
-                        print(dungeon_rooms[i][3][1])
-                        updated_player_health += int(dungeon_rooms[i][3][2])
+                        print(i[3][1])
+                        updated_player_health += int(i[3][2])
                         if updated_player_health > 0:
                             print("You are barely alive!")
                             updated_player_health = 0
                     else:
-                        print(dungeon_rooms[i][3][0])
+                        print(i[3][0])
         else:
             print("There doesn't seem to be a challenge in this room. You move on.")
         display_inventory(updated_inventory)
