@@ -103,11 +103,11 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                         print(i[3][0])
         else:
             print("There doesn't seem to be a challenge in this room. You move on.")
-            if i[2] is not None:
-                updated_player_health += int(i[3][2])
-                if updated_player_health > 0:
-                    print("You are barely alive!")
-                    updated_player_health = 0
+        if i[2] is not None:
+            updated_player_health += int(i[3][2])
+            if updated_player_health > 0:
+                print("You are barely alive!")
+                updated_player_health = 0
         display_inventory(updated_inventory)
     display_player_status(updated_player_health)
     return updated_player_health, updated_inventory
