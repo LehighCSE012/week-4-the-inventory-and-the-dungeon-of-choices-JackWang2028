@@ -72,7 +72,9 @@ def display_inventory(inventory):
     if len(inventory) == 0:
         print("Your inventory is empty.")
     for i in inventory:
-        print(str(i + 1) + ". " + str(inventory[i]) + "\n")
+        invcount = 1
+        print(str(invcount) + ". " + str(inventory[i]) + "\n")
+        invcount += 1
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     """simulate dungeon"""
     updated_inventory = inventory
