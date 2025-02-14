@@ -87,8 +87,9 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
         if i[2] is not None:
             if i[2] == "puzzle":
                 print("You encounter a puzzle!")
-                choice = input("'solve' or 'skip'") == "solve"
-                if choice is True:
+                choice = input("'solve' or 'skip'")
+                are_equal: bool = choice in ("Solve", "solve")
+                if are_equal is True:
                     outcome = random.choice([True, False])
                     if outcome is False:
                         print(i[3][1])
@@ -96,8 +97,9 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                         print(i[3][0])
             else:
                 print("You see a potential trap!")
-                choice = input("'disarm' or 'bypass'") == "disarm"
-                if choice is True:
+                choice = input("'disarm' or 'bypass'")
+                are_equal: bool = choice in ("Disarm", "disarm")
+                if are_equal is True:
                     outcome = random.choice([True, False])
                     if outcome is False:
                         print(i[3][1])
