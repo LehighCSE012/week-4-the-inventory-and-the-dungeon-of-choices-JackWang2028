@@ -82,7 +82,7 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
     for i in dungeon_rooms:
         print(i[0])
         if i[1] is not None:
-            print("You found a " + i[1] + "in the room.")
+            print("You found a " + i[1] + " in the room.")
             acquire_item(updated_inventory, i[1])
         if i[2] is not None:
             if i[2] == "puzzle":
