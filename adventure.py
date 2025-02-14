@@ -71,8 +71,8 @@ def display_inventory(inventory):
     print("Your inventory:")
     if len(inventory) == 0:
         print("Your inventory is empty.")
+    invcount = 1
     for i in inventory:
-        invcount = 1
         print(str(invcount) + ". " + str(i))
         invcount += 1
 def enter_dungeon(player_health, inventory, dungeon_rooms):
